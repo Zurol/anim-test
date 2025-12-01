@@ -21,6 +21,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = false;
 
 const loader = new THREE.TextureLoader();
+const clock = new THREE.Clock();
 
 /* ---------------- CUBO ---------------- */
 const cubeGeo = new THREE.BoxGeometry(0.5, 0.5, 0.5);
@@ -38,6 +39,40 @@ const img0 = new THREE.Mesh(
 img0.position.set(0, 0, 0.1);
 img0.scale.set(1.5, 1.5, 1);
 scene.add(img0);
+
+
+
+/* ---------------- IMG 0 ---------------- */
+const texC = loader.load("images/ConoceMas.png");
+const imgC = new THREE.Mesh(
+    new THREE.PlaneGeometry(6, 3),
+    new THREE.MeshBasicMaterial({ map: texC, transparent: true })
+);
+imgC.position.set(0, 0, 0.1);
+imgC.scale.set(1.5, 1.5, 1);
+scene.add(imgC);
+
+
+
+
+/* ---------------- IMG 0 ---------------- */
+const texA = loader.load("images/Arrow.png");
+
+const material = new THREE.MeshBasicMaterial({
+    map: texA,
+    transparent: true,
+    opacity: 1
+});
+
+
+const imgA = new THREE.Mesh(
+    new THREE.PlaneGeometry(6, 3),
+    material
+);
+imgA.position.set(-1, -1.3, 0.1);
+imgA.scale.set(0.5, 0.5, 1);
+scene.add(imgA);
+
 
 /* ---------------- IMG 1 ---------------- */
 const tex1 = loader.load("images/img1.jpg");
@@ -92,7 +127,7 @@ const img4 = new THREE.Mesh(
     new THREE.MeshBasicMaterial({ map: tex4, transparent: true })
 );
 img4.material.opacity = 1;
-img4.scale.set(0.7, 0.8, 1);
+img4.scale.set(0.8, 0.8, 1);
 img4.position.set(0, 0.1, -0.1);
 scene.add(img4);
 
@@ -118,6 +153,8 @@ const tl = gsap.timeline({ paused: true });
 
 //tl.to(img0.material, { opacity: 0, ease: "none", duration: 0.25 }, 0);
 tl.to(img0.position, { y: 2, ease: "none", duration: 0.2 }, 0.0);
+tl.to(imgC.position, { y: -2, ease: "none", duration: 0.5 }, 0.0);
+tl.to(imgA.position, { y: -2, ease: "none", duration: 0.5 }, 0.0);
 
 /* Parallax imagen 1 */
 tl.to(img1.scale, { x: 0.85, y: 0.85, ease: "none", duration: 0.2 }, 0);
@@ -130,8 +167,8 @@ tl.to(img1.material, { opacity: 0, ease: "none", duration: 0.3 }, 0.2);
 
 tl.to(img2.scale, { x: 6.0, y: 6.0, ease: "none", duration: 0.3 }, 0.2);
 tl.to(img3.scale, { x: 6.0, y: 6.0, ease: "none", duration: 0.3 }, 0.2);
-tl.to(img2.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.3);
-tl.to(img3.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.3);
+tl.to(img2.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.3 }, 0.2);
+tl.to(img3.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.3 }, 0.2);
 
 
 
@@ -139,7 +176,7 @@ tl.to(img3.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.3);
 tl.to(img2.material, { opacity: 0.6, ease: "none", duration: 0.3 }, 0.3);
 //tl.to(img3.material, { opacity: 0, ease: "none", duration: 0.3 }, 0.3);
 
-tl.to(img2.material, { opacity: 0.1, ease: "none", duration: 0.8 }, 0.6);
+tl.to(img2.material, { opacity: 0.08, ease: "none", duration: 0.8 }, 0.6);
 tl.to(img2.position, { x: -11, ease: "none", duration: 0.2 }, 0.6);
 tl.to(img3.position, { x: -11, ease: "none", duration: 0.2 }, 0.6);
 
@@ -212,6 +249,10 @@ window.addEventListener(
 ====================================================== */
 function animate() {
     requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // Oscila entre 0 y 1 como un fade
+    material.opacity = (Math.sin(t * 2) + 1) / 2;
     renderer.render(scene, camera);
 }
 animate();
