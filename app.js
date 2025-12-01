@@ -36,12 +36,12 @@ const img0 = new THREE.Mesh(
     new THREE.MeshBasicMaterial({ map: tex0, transparent: true })
 );
 img0.position.set(0, 1, 0.1);
-scene.add(img0);
+//scene.add(img0);
 
 /* ---------------- IMG 1 ---------------- */
-const tex1 = loader.load("images/img1.png");
+const tex1 = loader.load("images/img1.jpg");
 const img1 = new THREE.Mesh(
-    new THREE.PlaneGeometry(12, 6),
+    new THREE.PlaneGeometry(10, 5),
     new THREE.MeshBasicMaterial({ map: tex1, transparent: true })
 );
 img1.position.set(0, 0, 0);
@@ -85,7 +85,7 @@ imgB.position.set(0, 0, 0);
 scene.add(imgB);
 
 /* ---------------- IMG 4 ---------------- */
-const tex4 = loader.load("images/img3.png");
+const tex4 = loader.load("images/img4.jpg");
 const img4 = new THREE.Mesh(
     new THREE.PlaneGeometry(12, 6),
     new THREE.MeshBasicMaterial({ map: tex4, transparent: true })
@@ -118,7 +118,7 @@ const tl = gsap.timeline({ paused: true });
 tl.to(img0.material, { opacity: 0, ease: "none", duration: 0.25 }, 0);
 
 /* Parallax imagen 1 */
-tl.to(img1.scale, { x: 0.8, y: 0.8, ease: "none", duration: 0.2 }, 0);
+tl.to(img1.scale, { x: 0.85, y: 0.85, ease: "none", duration: 0.2 }, 0);
 
 /* Parallax imagen 2 */
 tl.to(img2.position, { z: 0, ease: "none", duration: 0.2 }, 0.2);
@@ -127,18 +127,18 @@ tl.to(img4.position, { z: 0.02, ease: "none", duration: 0.2 }, 0.2);
 
 tl.to(img2.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
 tl.to(img3.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
-tl.to(img4.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
+//tl.to(img4.scale, { x: 0.4, y: 0.4, ease: "none", duration: 0.4 }, 0);
 
 tl.to(img2.material, { opacity: 1, ease: "none", duration: 0.3 }, 0.2);
 tl.to(img3.material, { opacity: 1, ease: "none", duration: 0.3 }, 0.3);
 
 tl.to(img3.material, { opacity: 0, ease: "none", duration: 0 }, 0.6);
 tl.to(imgB.material, { opacity: 1, ease: "none", duration: 0 }, 0.6);
-tl.to(img4.material, { opacity: 1, ease: "none", duration: 0 }, 0.6);
+tl.to(img4.material, { opacity: 1, ease: "none", duration: 0.2 }, 0.6);
 
 tl.to(img4.position, { z: 0, ease: "none", duration: 0 }, 0.6);
-tl.to(img4.scale, { x: 0.4, y: 0.4, ease: "none", duration: 0.2 }, 0.6);
-tl.to(img4.position, { y: 0.9, ease: "none", duration: 0.2 }, 0.6);
+tl.to(img4.scale, { x: 0.81, y: 0.81, ease: "none", duration: 0.2 }, 0.6);
+tl.to(img4.position, { y: 0, ease: "none", duration: 0.2 }, 0.6);
 
 /* ======================================================
    CONTROL DE SCROLL SIN BLOQUEOS
