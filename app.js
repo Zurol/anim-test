@@ -125,20 +125,20 @@ tl.to(img2.position, { z: 0, ease: "none", duration: 0.2 }, 0.2);
 tl.to(img3.position, { z: 0, ease: "none", duration: 0.2 }, 0.2);
 tl.to(img4.position, { z: 0.02, ease: "none", duration: 0.2 }, 0.2);
 
-tl.to(img2.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.5 }, 0);
-tl.to(img3.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.5 }, 0);
-tl.to(img4.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.5 }, 0);
+tl.to(img2.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
+tl.to(img3.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
+tl.to(img4.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
 
 tl.to(img2.material, { opacity: 1, ease: "none", duration: 0.3 }, 0.2);
 tl.to(img3.material, { opacity: 1, ease: "none", duration: 0.3 }, 0.3);
 
-tl.to(img3.material, { opacity: 0, ease: "none", duration: 0 }, 0.7);
-tl.to(imgB.material, { opacity: 1, ease: "none", duration: 0 }, 0.7);
-tl.to(img4.material, { opacity: 1, ease: "none", duration: 0 }, 0.7);
+tl.to(img3.material, { opacity: 0, ease: "none", duration: 0 }, 0.6);
+tl.to(imgB.material, { opacity: 1, ease: "none", duration: 0 }, 0.6);
+tl.to(img4.material, { opacity: 1, ease: "none", duration: 0 }, 0.6);
 
-tl.to(img4.position, { z: 0, ease: "none", duration: 0 }, 0.7);
-tl.to(img4.scale, { x: 0.4, y: 0.4, ease: "none", duration: 0.2 }, 0.7);
-tl.to(img4.position, { y: 0.9, ease: "none", duration: 0.2 }, 0.7);
+tl.to(img4.position, { z: 0, ease: "none", duration: 0 }, 0.6);
+tl.to(img4.scale, { x: 0.4, y: 0.4, ease: "none", duration: 0.2 }, 0.6);
+tl.to(img4.position, { y: 0.9, ease: "none", duration: 0.2 }, 0.6);
 
 /* ======================================================
    CONTROL DE SCROLL SIN BLOQUEOS
