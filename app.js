@@ -123,25 +123,28 @@ tl.to(img0.position, { y: 2, ease: "none", duration: 0.2 }, 0.0);
 tl.to(img1.scale, { x: 0.85, y: 0.85, ease: "none", duration: 0.2 }, 0);
 
 /* Parallax imagen 2 */
-tl.to(img2.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.2);
-tl.to(img3.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.2);
+
 tl.to(img1.material, { opacity: 0, ease: "none", duration: 0.3 }, 0.2);
 
 //tl.to(img4.position, { z: 0.02, ease: "none", duration: 0.2 }, 0.2);
 
-tl.to(img2.scale, { x: 6.1, y: 6.1, ease: "none", duration: 0.4 }, 0.0);
-tl.to(img3.scale, { x: 6.1, y: 6.1, ease: "none", duration: 0.4 }, 0.0);
+tl.to(img2.scale, { x: 6.0, y: 6.0, ease: "none", duration: 0.3 }, 0.2);
+tl.to(img3.scale, { x: 6.0, y: 6.0, ease: "none", duration: 0.3 }, 0.2);
+tl.to(img2.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.3);
+tl.to(img3.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.3);
 
 
 
-tl.to(img2.material, { opacity: 0.6, ease: "none", duration: 0.3 }, 0.2);
-tl.to(img3.material, { opacity: 0, ease: "none", duration: 0.3 }, 0.2);
 
-tl.to(img2.material, { opacity: 0, ease: "none", duration: 0.2 }, 0.5);
-tl.to(img2.position, { x: -10, ease: "none", duration: 0.2 }, 0.5);
+tl.to(img2.material, { opacity: 0.6, ease: "none", duration: 0.3 }, 0.3);
+//tl.to(img3.material, { opacity: 0, ease: "none", duration: 0.3 }, 0.3);
 
-tl.to(img4.material, { opacity: 1, ease: "none", duration: 0 }, 0.5);
-tl.to(img4.position, { z: 0, y: 0, ease: "none", duration: 0 }, 0.7);
+tl.to(img2.material, { opacity: 0.1, ease: "none", duration: 0.8 }, 0.6);
+tl.to(img2.position, { x: -11, ease: "none", duration: 0.2 }, 0.6);
+tl.to(img3.position, { x: -11, ease: "none", duration: 0.2 }, 0.6);
+
+tl.to(img4.material, { opacity: 1, ease: "none", duration: 0.2 }, 0.7);
+tl.to(img4.position, { z: 0, y: 0, ease: "none", duration: 0.2 }, 0.8);
 
 
 //tl.to(img4.scale, { x: 0.81, y: 0.81, ease: "none", duration: 0.2 }, 0.6);
