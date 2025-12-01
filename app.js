@@ -30,13 +30,14 @@ cube.position.set(3, 1, 0);
 //scene.add(cube);
 
 /* ---------------- IMG 0 ---------------- */
-const tex0 = loader.load("images/LogoWhite.png");
+const tex0 = loader.load("images/Rosa.png");
 const img0 = new THREE.Mesh(
-    new THREE.PlaneGeometry(1, 1),
+    new THREE.PlaneGeometry(6, 3),
     new THREE.MeshBasicMaterial({ map: tex0, transparent: true })
 );
-img0.position.set(0, 1, 0.1);
-//scene.add(img0);
+img0.position.set(0, 0, 0.1);
+img0.scale.set(1.5, 1.5, 1);
+scene.add(img0);
 
 /* ---------------- IMG 1 ---------------- */
 const tex1 = loader.load("images/img1.jpg");
@@ -55,9 +56,9 @@ const img2 = new THREE.Mesh(
 );
 
 //img2.position.set(0, 0, 0);
-img2.position.set(0, 0, 2.9);
-img2.scale.set(2, 2, 2); // ← 200%
-img2.material.opacity = 0.1; // ← visible totalmente desde el inicio si quieres
+img2.position.set(0, 0, 0);
+img2.scale.set(0.5, 0.5, 1); // ← 200%
+img2.material.opacity = 0.0; // ← visible totalmente desde el inicio si quieres
 
 scene.add(img2);
 
@@ -68,9 +69,9 @@ const img3 = new THREE.Mesh(
     new THREE.MeshBasicMaterial({ map: tex3, transparent: true })
 );
 
-img3.position.set(0, 0, 2.9);
-img3.scale.set(2, 2, 2); // ← Igual que imagen 2
-img3.material.opacity = 0; // ← Comienza invisible
+img3.position.set(0, 0, 0);
+img3.scale.set(0.5, 0.5, 1); // ← Igual que imagen 2
+img3.material.opacity = 1; // ← Comienza invisible
 
 scene.add(img3);
 
@@ -90,9 +91,9 @@ const img4 = new THREE.Mesh(
     new THREE.PlaneGeometry(12, 6),
     new THREE.MeshBasicMaterial({ map: tex4, transparent: true })
 );
-img4.material.opacity = 0;
-img4.scale.set(2, 2, 2);
-img4.position.set(0, 0, 2.9);
+img4.material.opacity = 1;
+img4.scale.set(0.7, 0.8, 1);
+img4.position.set(0, 0.1, -0.1);
 scene.add(img4);
 
 /* ======================================================
@@ -115,30 +116,43 @@ const tl = gsap.timeline({ paused: true });
 /* Cubo */
 //tl.to(cube.rotation, { y: -Math.PI * 2, ease: "none", duration: 1 }, 0);
 
-tl.to(img0.material, { opacity: 0, ease: "none", duration: 0.25 }, 0);
+//tl.to(img0.material, { opacity: 0, ease: "none", duration: 0.25 }, 0);
+tl.to(img0.position, { y: 2, ease: "none", duration: 0.2 }, 0.0);
 
 /* Parallax imagen 1 */
 tl.to(img1.scale, { x: 0.85, y: 0.85, ease: "none", duration: 0.2 }, 0);
 
 /* Parallax imagen 2 */
-tl.to(img2.position, { z: 0, ease: "none", duration: 0.2 }, 0.2);
-tl.to(img3.position, { z: 0, ease: "none", duration: 0.2 }, 0.2);
-tl.to(img4.position, { z: 0.02, ease: "none", duration: 0.2 }, 0.2);
+tl.to(img2.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.2);
+tl.to(img3.position, { x: 6, y: 6, z: 0, ease: "none", duration: 0.2 }, 0.2);
+tl.to(img1.material, { opacity: 0, ease: "none", duration: 0.3 }, 0.2);
 
-tl.to(img2.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
-tl.to(img3.scale, { x: 0.75, y: 0.75, ease: "none", duration: 0.4 }, 0);
-//tl.to(img4.scale, { x: 0.4, y: 0.4, ease: "none", duration: 0.4 }, 0);
+//tl.to(img4.position, { z: 0.02, ease: "none", duration: 0.2 }, 0.2);
 
-tl.to(img2.material, { opacity: 1, ease: "none", duration: 0.3 }, 0.2);
-tl.to(img3.material, { opacity: 1, ease: "none", duration: 0.3 }, 0.3);
+tl.to(img2.scale, { x: 6.1, y: 6.1, ease: "none", duration: 0.4 }, 0.0);
+tl.to(img3.scale, { x: 6.1, y: 6.1, ease: "none", duration: 0.4 }, 0.0);
 
-tl.to(img3.material, { opacity: 0, ease: "none", duration: 0 }, 0.6);
-tl.to(imgB.material, { opacity: 1, ease: "none", duration: 0 }, 0.6);
-tl.to(img4.material, { opacity: 1, ease: "none", duration: 0.2 }, 0.6);
 
-tl.to(img4.position, { z: 0, ease: "none", duration: 0 }, 0.6);
-tl.to(img4.scale, { x: 0.81, y: 0.81, ease: "none", duration: 0.2 }, 0.6);
-tl.to(img4.position, { y: 0, ease: "none", duration: 0.2 }, 0.6);
+
+tl.to(img2.material, { opacity: 0.6, ease: "none", duration: 0.3 }, 0.2);
+tl.to(img3.material, { opacity: 0, ease: "none", duration: 0.3 }, 0.2);
+
+tl.to(img2.material, { opacity: 0, ease: "none", duration: 0.2 }, 0.5);
+tl.to(img2.position, { x: -10, ease: "none", duration: 0.2 }, 0.5);
+
+tl.to(img4.material, { opacity: 1, ease: "none", duration: 0 }, 0.5);
+tl.to(img4.position, { z: 0, y: 0, ease: "none", duration: 0 }, 0.7);
+
+
+//tl.to(img4.scale, { x: 0.81, y: 0.81, ease: "none", duration: 0.2 }, 0.6);
+
+//tl.to(img3.material, { opacity: 0, ease: "none", duration: 0 }, 0.6);
+//tl.to(imgB.material, { opacity: 1, ease: "none", duration: 0 }, 0.6);
+//tl.to(img4.material, { opacity: 1, ease: "none", duration: 0.2 }, 0.6);
+
+//tl.to(img4.position, { z: 0, ease: "none", duration: 0 }, 0.6);
+//tl.to(img4.scale, { x: 0.81, y: 0.81, ease: "none", duration: 0.2 }, 0.6);
+//tl.to(img4.position, { y: 0, ease: "none", duration: 0.2 }, 0.6);
 
 /* ======================================================
    CONTROL DE SCROLL SIN BLOQUEOS
