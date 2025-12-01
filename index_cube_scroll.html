@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Cube Gate</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Three.js UMD -->
+    <script src="https://unpkg.com/three@0.126.1/build/three.min.js"></script>
+
+    <!-- Loader compatible con THREE global -->
+    <script src="https://unpkg.com/three@0.126.1/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui/build/dat.gui.min.js"></script>
+  </head>
+
+  <body>
+    <div id="hero">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <div id="content">
+      <h1>Contenido de la página</h1>
+      <p>
+        Aquí empieza el contenido después de la animación inicial del cubo.
+        Puedes colocar secciones, texto, imágenes, lo que gustes.
+      </p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
